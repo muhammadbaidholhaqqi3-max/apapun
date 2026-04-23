@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <style>
+        /* CSS SEDERHANA */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background: white;
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* SECTION UMUM */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        /* ABOUT ME */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .about-text {
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-text h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .info-item strong {
+            color: #667eea;
+        }
+
+        /* HOBBIES */
+        .hobbies-section {
+            background: white;
+        }
+
+        .hobbies-section .section-title {
+            color: #333;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .hobby-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hobby-icon {
+            font-size: 40px;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .hobby-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* SCHOOL HISTORY */
+        .school-history {
+            background: #f8f9fa;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .timeline-date {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        /* SOCIAL MEDIA */
+        .social-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 50px 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .about-container { flex-direction: column; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <div class="logo">Portofolionya Edo</div>
+            <div class="nav-links">
+                <a href="#about">Tentang Saya</a>
+                <a href="#hobbies">Hobi</a>
+                <a href="#school">Riwayat Sekolah</a>
+                <a href="#social">Sosial Media</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Halo, Saya Muhammad Baidhol Haqqi</h1>
+            <p>Mahasiswa Informatika & Web Developer</p>
+            <a href="#about" class="btn">Lihat Profil Saya</a>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="section">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-container">
+            <img src="c:\Users\muham\OneDrive\Gambar\8b943da9-c8ee-4fb5-8d67-fbe5419d3c56.jpg" alt="Foto Profil" class="about-img">
+            <div class="about-text">
+                <h3>Informasi Pribadi</h3>
+                <p>Saya adalah mahasiswa yang antusias dalam dunia teknologi dan pengembangan web. Saya senang belajar hal baru dan menciptakan sesuatu yang bermanfaat.</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>NIM:</strong>
+                        <span>250411100102</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Kelas:</strong>
+                        <span>Dasar Pemrograman Web A</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Universitas:</strong>
+                        <span>Universitas Trunojoyo</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Program Studi:</strong>
+                        <span>Informatika</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOBBIES SECTION -->
+    <section id="hobbies" class="section hobbies-section">
+        <h2 class="section-title">Hobi Saya</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">🎮</div>
+                <h3>Gaming</h3>
+                <p>Saya suka bermain game untuk relaksasi dan melatih strategi.</p>
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🎣</div>
+                <h3>Memancing</h3>
+                <p>Memancing adalah kegiatan yang sangat bermanfaat untuk mengisi waktu luang,apalagi mancing amarah.</p>
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🎵</div>
+                <h3>Musik</h3>
+                <p>Mendengarkan musik untuk menenangkan pikiran dan inspirasi.</p>
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🏋</div>
+                <h3>Olahraga</h3>
+                <p>gym adalah suatu investasi paling bermanfaat untuk masa tua nanti.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHOOL HISTORY SECTION -->
+    <section id="school" class="section school-history">
+        <h2 class="section-title">Riwayat Sekolah</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">2025 - Sekarang</span>
+                <h3>Universitas Trunojoyo</h3>
+                <h4>Program Sarjana Informatika</h4>
+                <p>Sedang menempuh pendidikan S1 Dengan Sedikit Mulai Gila</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2021 - 2024</span>
+                <h3>SMA Negeri 1 Bangkalan</h3>
+                <h4>Jurusan IPA</h4>
+                <p>Lulus dengan Aman Selamat dan Mulia</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2018 - 2021</span>
+                <h3>SMP Budi Utomo Jombang</h3>
+                <h4>Kelas B dari Kelas 7-9</h4>
+                <p>Lulus Jalur Covid ni Bosss</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA SECTION -->
+    <section id="social" class="social-section">
+        <h2>Ikuti Saya di Sosial Media</h2>
+        <p>Terhubung dengan saya di berbagai platform</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/edohaqqi_/" target="_blank" class="social-btn">Instagram</a>
+            <a href="https://www.tiktok.com/@bigmuyyycihuy" target="_blank" class="social-btn">TikTok</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Muhammad Baidhol Haqqi. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
